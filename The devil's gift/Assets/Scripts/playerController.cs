@@ -3,23 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class playerController : MonoBehaviour
 {
+    public Transform hit;
+
     private bool lookRight;
 
-    private int jumpCount;
-
-    public int jumpNumber;
     public int health;
 
     public float speed; // скорость перемещения
-    public float jumpForce;
     public float moveInputH; // переменная отвечающая за вычисление направления перемещения по горизонтали
     public float moveInputV; // переменная отвечающая за вычисление направления перемещения по виртикали
-    public float checkRadius;
-
-    public Transform graundCheck;
-
-    public LayerMask whatIsGraund;
-
+   
     private Rigidbody2D rb;
 
     void Start()
@@ -30,17 +23,7 @@ public class playerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && jumpCount > 0)
-        {
-            rb.linearVelocity = Vector2.up * jumpForce;
-            jumpCount--;
-        }
 
-
-        if (health == 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
     }
     void FixedUpdate()
     {
@@ -65,5 +48,11 @@ public class playerController : MonoBehaviour
         Vector3 Scaler = transform.localScale; 
         Scaler.x *= -1;
         transform.localScale = Scaler;
+    }
+
+    private void OnMouseDown()
+    {
+        Instantiate(hit, transform.position, transform.rotation);
+       
     }
 }
