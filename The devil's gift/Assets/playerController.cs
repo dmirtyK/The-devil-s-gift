@@ -10,10 +10,10 @@ public class playerController : MonoBehaviour
     public int jumpNumber;
     public int health;
 
-    public float speed;
+    public float speed; // скорость перемещения
     public float jumpForce;
-    public float moveInputH;
-    public float moveInputV;
+    public float moveInputH; // переменная отвечающая за вычисление направления перемещения по горизонтали
+    public float moveInputV; // переменная отвечающая за вычисление направления перемещения по виртикали
     public float checkRadius;
 
     public Transform graundCheck;
@@ -24,7 +24,7 @@ public class playerController : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>(); // получаем компонент Rigidbody2D
     }
 
 
@@ -44,12 +44,12 @@ public class playerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        moveInputH = Input.GetAxis("Horizontal");
-        moveInputV = Input.GetAxis("Vertical");
-        rb.linearVelocity = new Vector2(moveInputV * speed, rb.linearVelocity.y);
-        rb.linearVelocity = new Vector2(moveInputH * speed, rb.linearVelocity.x);
+        moveInputH = Input.GetAxis("Horizontal"); // присваеваем систему инпутов встроенных в юнити по горизонтали
+        moveInputV = Input.GetAxis("Vertical"); // присваеваем систему инпутов встроенных в юнити по виртикали
+        rb.linearVelocity = new Vector2(moveInputV * speed, rb.linearVelocity.y); // перемещение в заданную сторону (moveInputV) помноженное на скорость (speed) в заданном векторе времени (rb.linearVelocity.y) (y напровление вектора (вертикальное))
+        rb.linearVelocity = new Vector2(moveInputH * speed, rb.linearVelocity.x); // перемещение в заданную сторону (moveInputH) помноженное на скорость (speed) в заданном векторе времени (rb.linearVelocity.x) (x напровление вектора (горизонтальное))
 
-        if (lookRight == true && moveInputH > 0)
+        if (lookRight == true && moveInputH > 0) // условия поворота 
         {
             FlipIt();
         }
@@ -59,10 +59,10 @@ public class playerController : MonoBehaviour
         }
     }
 
-    private void FlipIt()
+    private void FlipIt() // поворот спрайта 
     {
-        lookRight = !lookRight;
-        Vector3 Scaler = transform.localScale;
+        lookRight = !lookRight; 
+        Vector3 Scaler = transform.localScale; 
         Scaler.x *= -1;
         transform.localScale = Scaler;
     }
