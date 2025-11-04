@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private Transform player;
+    public Transform player;
 
     public float speed = 1f;
 
     void Start()
     {
-        player = GameObject.Find("Skelet pon_3").transform;
+       // player = GameObject.Find("Skelet pon_3").transform; 
     }
 
     void Update()
