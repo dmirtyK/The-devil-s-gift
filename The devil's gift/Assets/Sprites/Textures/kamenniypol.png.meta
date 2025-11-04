@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ed3cadff933fe6b488a006adbc81af39
+guid: 6e7d9fb90d5ced748812cbae472b7d66
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2291494042769515312
-    second: StoneFloor_0
+      213: 10131189921135323
+    second: kamenniypol_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: StoneFloor_0
+      name: kamenniypol_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1024
-        height: 1024
+        width: 5000
+        height: 5000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0dc9cc71f4af230e0800000000000000
-      internalID: -2291494042769515312
+      spriteID: bdab668734ef32000800000000000000
+      internalID: 10131189921135323
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      StoneFloor_0: -2291494042769515312
+      kamenniypol_0: 10131189921135323
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
